@@ -63,6 +63,8 @@ section{padding-block:clamp(64px,9vw,120px)}
 .stage .day{position:absolute;left:18px;top:18px;display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.88);border:1px solid var(--linha);border-radius:999px;padding:8px 14px;font-size:12px;font-weight:600;letter-spacing:.06em;font-variant-numeric:tabular-nums}
 .stage .day b{font-family:var(--serif);font-size:16px;font-weight:600;letter-spacing:0}
 .stage .phase{position:absolute;right:18px;bottom:16px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;background:var(--mata);color:var(--orvalho);padding:7px 12px;border-radius:999px}
+.stage-video{aspect-ratio:4/5;width:min(100%,max(340px,calc((100svh - 150px)*.8)),560px);justify-self:center;background:var(--mata)}
+.stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .stage .tag{position:absolute;left:18px;bottom:16px;font-size:10.5px;opacity:.6;letter-spacing:.06em}
 @media (max-width:900px){.hero-grid{grid-template-columns:minmax(0,1fr)}}
 
@@ -269,11 +271,8 @@ footer{background:var(--mata);color:var(--orvalho);padding-block:56px calc(40px 
         </div>
         <p class="note">Agende uma visita técnica: avaliamos solo, inclinação e drenagem antes de propor a solução.</p>
       </div>
-      <div class="stage" id="heroStage">
-        <canvas id="heroCanvas" aria-label="Animação: um talude de solo exposto recebe o jato de hidrossemeadura e a grama nasce até cobrir toda a encosta." role="img"></canvas>
-        <div class="day">Dia <b id="dayNum">0</b></div>
-        <div class="phase" id="phaseLbl">Aplicação</div>
-        <div class="tag">Ilustração do processo</div>
+      <div class="stage stage-video" id="heroStage">
+        <video id="heroVideo" src="hero.mp4" poster="hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Vista aérea de uma obra de recuperação ambiental com taludes tratados ao redor de lagos."></video>
       </div>
     </div>
   </section>
@@ -630,9 +629,14 @@ footer{background:var(--mata);color:var(--orvalho);padding-block:56px calc(40px 
     return {ctx, W, H};
   }
 
+  // ---------- HERO: vídeo
+  const heroVideo = document.getElementById('heroVideo');
+  if (heroVideo && matchMedia('(prefers-reduced-motion: reduce)').matches){ heroVideo.removeAttribute('autoplay'); heroVideo.pause(); }
+
   // ---------- HERO: talude ganhando vida
   (function hero(){
     const cv = document.getElementById('heroCanvas'), day = document.getElementById('dayNum'), ph = document.getElementById('phaseLbl');
+    if (!cv) return;
     let W, H, ctx, g, blades, rills, visible = true, t0 = performance.now();
     const CYCLE = 15;
     function setup(){ ({ctx,W,H} = fitCanvas(cv)); g = geometry(W,H,'talude'); blades = makeBlades(g,W,H,11); rills = makeRills(g,3); }
