@@ -6,7 +6,7 @@ Hidrossemeadura · Belo Horizonte — MG
 
 Hidrossemeadura, revegetação e controle de erosão para taludes, rodovias, mineração e grandes obras em Minas Gerais e em todo o Brasil.
 
-[Solicitar orçamento](#contato) [Falar no WhatsApp](https://wa.me/5531900000000)
+[Solicitar orçamento](#contato) [Falar no WhatsApp](https://wa.me/5531975005106)
 
 Agende uma visita técnica: avaliamos solo, inclinação e drenagem antes de propor a solução.
 
@@ -188,11 +188,11 @@ Contato
 
 Conte sobre a obra e a nossa equipe técnica retorna com os próximos passos e a proposta.
 
-WhatsApp**(31) 9 0000-0000**
+WhatsApp**(31) 9 7500-5106**
 
-[Abrir](https://wa.me/5531900000000)
+[Abrir](https://wa.me/5531975005106)
 
-Telefone**(31) 0000-0000**
+Telefone**(31) 9 7500-5106**
 
 E-mail**contato@soloverdeambiental.com.br**
 
@@ -206,7 +206,7 @@ Mensagem pronta.[Enviar pelo WhatsApp](#)
 
 ## Solo tratado vira *vida*.
 
-[Solicitar orçamento](#contato)[WhatsApp](https://wa.me/5531900000000)
+[Solicitar orçamento](#contato)[WhatsApp](https://wa.me/5531975005106)
 
 Hidrossemeadura, revegetação, controle de erosão e recuperação de áreas degradadas.
 
@@ -220,7 +220,7 @@ Hidrossemeadura, revegetação, controle de erosão e recuperação de áreas de
 
 #### Contato
 
-(31) 9 0000-0000
+(31) 9 7500-5106
 
 contato@soloverdeambiental.com.br
 
