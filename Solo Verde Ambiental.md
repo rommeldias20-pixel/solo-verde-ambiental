@@ -14,7 +14,6 @@ Dia **0**
 
 Aplicação
 
-Ilustração do processo
 
 Taludes rodoviáriosMineraçãoBarragensLoteamentosUsinas solaresÁreas industriaisPRADTerraplenagem
 
@@ -52,11 +51,11 @@ Antes e depois
 
 ## Do solo exposto ao talude coberto
 
-Arraste o controle para comparar. À esquerda, o talude com sulcos de erosão; à direita, a mesma encosta depois da hidrossemeadura, com a vegetação estabelecida.
+Arraste o controle para comparar. À esquerda, o talude com o solo exposto e marcado pela erosão; à direita, a mesma encosta logo após a hidrossemeadura, coberta pela camada protetora onde as sementes vão germinar.
 
-AntesDepois Comparar antes e depois
+AntesDurante Comparar antes e depois
 
-Ilustração. Substitua por fotos reais de obras, sempre do mesmo ponto de vista.[Ver portfólio →](#portfolio)
+Obra real, fotografada do mesmo ponto antes e logo após a aplicação.[Ver portfólio →](#portfolio)
 
 Como trabalhamos
 
