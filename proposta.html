@@ -8,14 +8,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300..700&display=swap">
 <style>
-/* Layout: capa escura (Mata Fechada) onde o jato de hidrossemeadura cobre o talude; depois um dossiê claro sobre Orvalho, seções numeradas na ordem real da obra. */
+/* Layout: capa escura (Mata Fechada) onde o jato de hidrossemeadura cobre o talude; depois uma proposta curta e clara sobre Orvalho: área, processo, investimento, condições e aceite. */
 :root{
-  --orvalho:#E5FAE7; --mata:#2B443B; --mata-2:#3C574C; --mata-3:#1F332C; --talude:#9AB06A; --rebrota:#96F456; --algodao:#FFFFFF; --terra:#C9B58F; --terra-d:#8B7350;
+  --orvalho:#E5FAE7; --mata:#2B443B; --mata-2:#3C574C; --mata-3:#1F332C; --talude:#9AB06A; --rebrota:#96F456; --algodao:#FFFFFF; --terra:#C9B58F;
   --linha:rgba(43,68,59,.14); --linha-forte:rgba(43,68,59,.28);
   --serif:'Lora', Georgia, 'Times New Roman', serif;
   --sans:'Montserrat', 'Helvetica Neue', Arial, sans-serif;
   --leaf-d:#2B443B; --leaf-l:#9AB06A; --word:#2B443B;
-  --wrap:1120px; --gutter:clamp(16px,4vw,40px);
+  --wrap:1080px; --gutter:clamp(16px,4vw,40px);
   color-scheme:light;
 }
 *{box-sizing:border-box}
@@ -24,7 +24,7 @@ body{margin:0;background:var(--orvalho);color:var(--mata);font-family:var(--sans
 h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;line-height:1.08;margin:0;text-wrap:balance}
 p{margin:0}
 a{color:inherit}
-img,video,canvas,svg{max-width:100%}
+svg{max-width:100%}
 :focus-visible{outline:2px solid var(--rebrota);outline-offset:3px;border-radius:4px}
 .wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
 .eyebrow{font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase}
@@ -37,12 +37,9 @@ img,video,canvas,svg{max-width:100%}
 .btn-lime:hover{box-shadow:0 10px 24px rgba(110,190,50,.35)}
 .btn-dark{background:var(--mata);color:var(--orvalho)}
 .btn-dark:hover{box-shadow:0 10px 24px rgba(43,68,59,.25)}
-.btn-ghost{border-color:var(--linha-forte);color:var(--mata);background:transparent}
-.btn-ghost:hover{background:var(--algodao)}
 .btn-ghost-l{border-color:rgba(229,250,231,.35);color:var(--orvalho);background:transparent}
 .btn-ghost-l:hover{background:rgba(229,250,231,.08)}
 
-/* aviso de exemplo */
 .demo{background:var(--rebrota);color:var(--mata);font-size:13px;font-weight:600;text-align:center;padding:9px 16px}
 
 /* capa */
@@ -53,19 +50,16 @@ img,video,canvas,svg{max-width:100%}
 .cover .logo-h{--leaf-d:#E5FAE7;--leaf-l:#9AB06A;--word:#E5FAE7;height:46px;width:177px;display:block}
 .cover-meta{text-align:right;font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.8;line-height:1.7}
 .cover-meta b{display:block;font-family:var(--serif);font-size:18px;letter-spacing:0;text-transform:none;font-weight:500;opacity:1;color:var(--rebrota)}
-.cover-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(24px,5vw,72px);align-items:end;padding-block:clamp(20px,4vw,44px) clamp(96px,10vw,130px)}
-.cover h1{font-size:clamp(38px,5.6vw,74px);line-height:1.02;letter-spacing:-.02em;margin-block:20px 24px}
+.cover-body{max-width:820px;padding-block:clamp(24px,5vw,56px) clamp(150px,19vw,250px)}
+.cover h1{font-size:clamp(40px,6.4vw,82px);line-height:1.02;letter-spacing:-.02em;margin-block:20px 24px}
 .cover h1 em{font-style:italic;color:var(--rebrota)}
-.cover .for{font-size:clamp(15px,1.3vw,17px);opacity:.88;max-width:46ch}
+.cover .for{font-size:clamp(15px,1.3vw,17px);opacity:.88;max-width:52ch}
 .cover .for strong{font-weight:600;opacity:1}
 .cover .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.frame{position:relative;justify-self:end;width:100%;max-width:340px;border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:var(--mata-3);box-shadow:0 30px 60px rgba(0,0,0,.28)}
-.frame video,.frame img{width:100%;height:100%;object-fit:cover;display:block}
-.frame .tag{position:absolute;left:14px;bottom:14px;right:14px;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px;border-radius:14px;background:rgba(31,51,44,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-size:12px}
-.frame .tag b{font-family:var(--serif);font-size:15px;font-weight:500}
-@media (max-width:820px){.cover-grid{grid-template-columns:minmax(0,1fr)}.frame{justify-self:start;aspect-ratio:5/4}.cover-meta{display:none}}
+.cover .valid{display:inline-flex;gap:10px;align-items:center;margin-top:22px;font-size:13px;padding:8px 14px;border-radius:999px;background:rgba(229,250,231,.08);border:1px solid rgba(229,250,231,.16)}
+.cover .valid b{font-weight:600;color:var(--rebrota)}
+@media (max-width:640px){.cover-meta{display:none}}
 
-/* load sequence */
 .ld{opacity:1;transform:none}
 .js .ld{animation:rise .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 110ms + 150ms)}
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
@@ -81,35 +75,36 @@ img,video,canvas,svg{max-width:100%}
 .bar nav a{text-decoration:none;opacity:.8}
 .bar nav a:hover{opacity:1;text-decoration:underline;text-decoration-color:var(--rebrota);text-decoration-thickness:2px;text-underline-offset:6px}
 .bar .btn{min-height:40px;padding:0 18px;font-size:13px}
-@media (max-width:980px){.bar nav{display:none}}
+@media (max-width:900px){.bar nav{display:none}}
 @media (max-width:420px){.bar .id .lbl{display:none}}
 
 /* seções */
-section{padding-block:clamp(56px,8vw,104px)}
+section{padding-block:clamp(56px,8vw,96px)}
 section + section{border-top:1px solid var(--linha)}
-.sh{display:grid;grid-template-columns:72px minmax(0,1fr);gap:clamp(12px,3vw,32px);margin-bottom:clamp(28px,4vw,48px)}
+.sh{display:grid;grid-template-columns:72px minmax(0,1fr);gap:clamp(12px,3vw,32px);margin-bottom:clamp(28px,4vw,44px)}
 .sh .n{font-family:var(--serif);font-size:15px;font-style:italic;padding-top:10px;color:var(--mata-2)}
-.sh .n::after{content:"";display:block;width:100%;height:1.5px;background:var(--mata);margin-top:10px;transform-origin:left;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
-.sh h2{font-size:clamp(30px,4vw,48px)}
+.sh .n::after{content:"";display:block;width:100%;height:1.5px;background:var(--mata);margin-top:10px}
+.sh h2{font-size:clamp(30px,4vw,46px)}
 .sh p{margin-top:14px;max-width:60ch;opacity:.86}
 @media (max-width:640px){.sh{grid-template-columns:minmax(0,1fr)}.sh .n{padding-top:0;width:64px}}
 .body-col{margin-left:calc(72px + clamp(12px,3vw,32px))}
 @media (max-width:640px){.body-col{margin-left:0}}
 
 /* números-chave */
-.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-block:1.5px solid var(--mata)}
-.kpi{padding:22px clamp(12px,2vw,24px)}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-block:1.5px solid var(--mata)}
+.kpi{padding:22px clamp(12px,2vw,24px);min-width:0}
 .kpi + .kpi{border-left:1px solid var(--linha-forte)}
-.kpi .v{font-family:var(--serif);font-size:clamp(30px,3.6vw,46px);line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+.kpi .v{font-family:var(--serif);font-size:clamp(28px,3.4vw,44px);line-height:1.05;font-variant-numeric:tabular-nums}
 .kpi .v small{font-family:var(--sans);font-size:14px;font-weight:600;margin-left:4px}
+.kpi .v.txt{font-size:clamp(22px,2.4vw,30px)}
 .kpi .l{font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-top:10px;opacity:.75}
-@media (max-width:760px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.kpi:nth-child(3){border-left:0}.kpi:nth-child(n+3){border-top:1px solid var(--linha-forte)}}
+@media (max-width:640px){.kpis{grid-template-columns:minmax(0,1fr)}.kpi + .kpi{border-left:0;border-top:1px solid var(--linha-forte)}}
 
-/* diagnóstico */
-.diag{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(24px,4vw,56px);align-items:start}
-.diag .txt{font-family:var(--serif);font-size:clamp(19px,1.8vw,23px);line-height:1.55;min-width:0}
+.diag{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(24px,4vw,56px);align-items:start;margin-top:clamp(28px,4vw,44px)}
+.diag.solo{grid-template-columns:minmax(0,1fr);max-width:520px}
+.diag .txt{font-family:var(--serif);font-size:clamp(19px,1.8vw,22px);line-height:1.55;min-width:0}
 .diag .txt p + p{margin-top:16px}
-.facts{background:var(--algodao);border-radius:18px;padding:8px 22px;min-width:0}
+.facts{background:var(--algodao);border-radius:18px;padding:8px 22px;min-width:0;margin:0}
 .facts div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;font-size:14px}
 .facts div + div{border-top:1px solid var(--linha)}
 .facts dt{opacity:.7}
@@ -127,114 +122,75 @@ section + section{border-top:1px solid var(--linha)}
 .steps p{font-size:14px;opacity:.82}
 @media (max-width:860px){.steps{grid-template-columns:minmax(0,1fr);gap:22px}.steps::before,.steps::after{left:21px;right:auto;top:0;bottom:0;width:2px;height:auto}.steps::after{transform:scaleY(var(--p,1));transform-origin:top}.steps li{display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:18px}.steps h3{margin-top:8px}.steps p{grid-column:2}}
 
-/* especificação */
-.spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));border-radius:18px;overflow:hidden;border:1px solid var(--linha-forte)}
-.spec div{box-shadow:0 0 0 .5px var(--linha-forte);padding:22px;display:grid;gap:8px;align-content:start}
-.spec .ic{width:40px;height:40px;border-radius:12px;background:var(--algodao);display:grid;place-items:center}
-.spec h3{font-size:19px;margin-top:6px}
-.spec p{font-size:14px;opacity:.86}
-.spec .rate{font-size:12.5px;font-weight:600;letter-spacing:.04em;color:var(--mata-2)}
-.norm{margin-top:18px;font-size:13px;opacity:.75;max-width:80ch}
+/* investimento */
+.offer{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border-radius:24px;overflow:hidden;box-shadow:0 24px 48px rgba(43,68,59,.14)}
+.offer .main{background:var(--mata);color:var(--orvalho);padding:clamp(24px,3.5vw,40px);display:flex;flex-direction:column;gap:14px;min-width:0}
+.offer .main .eyebrow{color:var(--talude)}
+.offer .main h3{font-size:clamp(26px,3vw,36px)}
+.offer .main h3 em{color:var(--rebrota)}
+.offer .calc{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;font-size:15px;opacity:.9;font-variant-numeric:tabular-nums}
+.offer .calc b{font-family:var(--serif);font-size:22px;font-weight:500}
+.offer .calc i{font-style:normal;opacity:.6}
+.offer .price{margin-top:auto;padding-top:18px;border-top:1px solid rgba(229,250,231,.18)}
+.offer .price span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.offer .price b{display:block;font-family:var(--serif);font-size:clamp(38px,5vw,56px);font-weight:500;line-height:1.05;font-variant-numeric:tabular-nums;color:var(--rebrota)}
+.offer .inc{background:var(--algodao);padding:clamp(24px,3.5vw,40px);min-width:0}
+.offer .inc h4{margin:0 0 14px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;opacity:.75}
+.offer .inc ul{list-style:none;margin:0;padding:0;display:grid;gap:12px;font-size:15px}
+.offer .inc li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;align-items:start}
+.offer .inc li svg{width:22px;height:22px;margin-top:1px}
+@media (max-width:820px){.offer{grid-template-columns:minmax(0,1fr)}}
 
-/* pacotes */
-.pkgs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
-.pkg{all:unset;box-sizing:border-box;cursor:pointer;position:relative;display:flex;flex-direction:column;gap:12px;padding:26px 24px 24px;border-radius:20px;border:1.5px solid var(--linha-forte);background:var(--orvalho);transition:transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease}
-.pkg:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(43,68,59,.12)}
-.pkg:focus-visible{outline:2px solid var(--mata);outline-offset:3px}
-.pkg .flag{position:absolute;top:-12px;left:22px;background:var(--rebrota);color:var(--mata);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
-.pkg .nm{font-family:var(--serif);font-size:24px}
-.pkg .rs{font-size:14px;opacity:.85;min-height:3.2em}
-.pkg ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:13.5px}
-.pkg li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px;align-items:start}
-.pkg li svg{width:18px;height:18px;margin-top:2px}
-.pkg li.off{opacity:.38;text-decoration:line-through}
-.pkg .pr{margin-top:auto;padding-top:14px;border-top:1px solid var(--linha)}
-.pkg .pr b{display:block;font-family:var(--serif);font-size:28px;font-weight:500;font-variant-numeric:tabular-nums}
-.pkg .pr span{font-size:12.5px;opacity:.7}
-.pkg .radio{position:absolute;top:22px;right:22px;width:22px;height:22px;border-radius:50%;border:2px solid var(--linha-forte);transition:all .25s ease}
-.pkg[aria-checked="true"]{background:var(--mata);color:var(--orvalho);border-color:var(--mata);box-shadow:0 22px 44px rgba(43,68,59,.25)}
-.pkg[aria-checked="true"] .radio{border-color:var(--rebrota);background:var(--rebrota);box-shadow:inset 0 0 0 4px var(--mata)}
-.pkg[aria-checked="true"] .pr{border-color:rgba(229,250,231,.2)}
-@media (max-width:900px){.pkgs{grid-template-columns:minmax(0,1fr)}.pkg .rs{min-height:0}}
+.addon{all:unset;box-sizing:border-box;cursor:pointer;margin-top:16px;width:100%;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px;align-items:center;padding:18px 22px;border-radius:18px;border:1.5px dashed var(--linha-forte);background:transparent;transition:background .25s ease, border-color .25s ease}
+.addon:hover{background:var(--algodao)}
+.addon:focus-visible{outline:2px solid var(--mata);outline-offset:3px}
+.addon .box{width:26px;height:26px;border-radius:8px;border:2px solid var(--linha-forte);display:grid;place-items:center;transition:all .2s ease}
+.addon .box svg{width:16px;height:16px;opacity:0;transform:scale(.6);transition:all .2s ease}
+.addon .t b{display:block;font-family:var(--serif);font-size:19px;font-weight:500}
+.addon .t span{font-size:13.5px;opacity:.8}
+.addon .p{font-family:var(--serif);font-size:20px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.addon .p small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.65;text-align:right}
+.addon[aria-checked="true"]{border-style:solid;border-color:var(--mata);background:var(--algodao)}
+.addon[aria-checked="true"] .box{background:var(--mata);border-color:var(--mata)}
+.addon[aria-checked="true"] .box svg{opacity:1;transform:none}
+@media (max-width:560px){.addon{grid-template-columns:auto minmax(0,1fr)}.addon .p{grid-column:2}.addon .p small{text-align:left}}
 
-/* planilha */
-.sheet{margin-top:clamp(28px,4vw,44px);background:var(--algodao);border-radius:20px;padding:clamp(18px,3vw,32px)}
-.sheet-h{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:14px}
-.sheet-h h3{font-size:22px}
-.sheet-h span{font-size:13px;opacity:.7}
+.sheet{margin-top:clamp(24px,3vw,36px);background:var(--algodao);border-radius:20px;padding:clamp(18px,3vw,30px)}
+.sheet h3{font-size:21px;margin-bottom:12px}
 .tbl{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:14px;min-width:620px}
-th{font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-align:left;font-weight:600;opacity:.7;padding:10px 10px;border-bottom:1.5px solid var(--mata)}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+th{font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-align:left;font-weight:600;opacity:.7;padding:10px;border-bottom:1.5px solid var(--mata)}
 td{padding:14px 10px;border-bottom:1px solid var(--linha);vertical-align:top}
 td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-td.i{opacity:.6;font-variant-numeric:tabular-nums;width:40px}
-tr.row{transition:opacity .35s ease}
-tr.row.out{opacity:.28}
-tr.row.out td{text-decoration:line-through;text-decoration-color:rgba(43,68,59,.4)}
-.total{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-top:22px;padding-top:20px;border-top:1.5px solid var(--mata)}
+.total{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-top:20px;padding-top:18px;border-top:1.5px solid var(--mata)}
 .total .lbl{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
-.total .lbl small{display:block;text-transform:none;letter-spacing:0;font-size:13px;margin-top:4px}
-.total .big{font-family:var(--serif);font-size:clamp(36px,5vw,58px);line-height:1;font-variant-numeric:tabular-nums}
+.total .big{font-family:var(--serif);font-size:clamp(34px,4.6vw,52px);line-height:1;font-variant-numeric:tabular-nums}
 .total .m2{font-size:13px;opacity:.7;text-align:right;margin-top:6px}
 
-/* cronograma */
-.gantt{display:grid;gap:10px}
-.g-row{display:grid;grid-template-columns:minmax(150px,230px) minmax(0,1fr);gap:16px;align-items:center}
-.g-row .t{font-size:14px;font-weight:500}
-.g-row .t small{display:block;font-weight:400;opacity:.65;font-size:12.5px}
-.g-track{position:relative;height:30px;background:repeating-linear-gradient(90deg, transparent 0 calc(10% - 1px), var(--linha) calc(10% - 1px) 10%);border-radius:8px}
-.g-bar{position:absolute;top:4px;bottom:4px;border-radius:6px;background:var(--mata);transform-origin:left;transition:transform 1s cubic-bezier(.3,.6,.2,1)}
-.g-bar.lime{background:var(--talude)}
-.g-bar.lime2{background:var(--rebrota)}
-.g-axis{display:grid;grid-template-columns:minmax(150px,230px) minmax(0,1fr);gap:16px;font-size:11.5px;opacity:.65}
-.g-axis div:last-child{display:flex;justify-content:space-between;font-variant-numeric:tabular-nums}
-@media (max-width:600px){.g-row,.g-axis{grid-template-columns:minmax(0,1fr);gap:6px}.g-axis div:first-child{display:none}}
-
-/* garantia */
-.guar{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:center;background:var(--mata);color:var(--orvalho);border-radius:24px;padding:clamp(24px,4vw,48px)}
-.ring{width:clamp(170px,22vw,230px);aspect-ratio:1;position:relative}
-.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
-.ring .c-bg{fill:none;stroke:rgba(229,250,231,.14);stroke-width:10}
-.ring .c-fg{fill:none;stroke:var(--rebrota);stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset 1.8s cubic-bezier(.3,.6,.2,1)}
-.ring .lbl{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
-.ring .lbl b{font-family:var(--serif);font-size:clamp(44px,5vw,60px);font-weight:500;line-height:1;font-variant-numeric:tabular-nums}
-.ring .lbl span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.8;margin-top:6px}
-.guar h3{font-size:clamp(24px,2.6vw,32px)}
-.guar p{margin-top:12px;opacity:.88;max-width:58ch}
-.guar ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px;font-size:14.5px}
-.guar li{display:grid;grid-template-columns:20px minmax(0,1fr);gap:10px}
-.guar li svg{width:20px;height:20px;margin-top:2px}
-@media (max-width:720px){.guar{grid-template-columns:minmax(0,1fr)}}
-
 /* condições */
-.cond{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,40px)}
-.cond > div{min-width:0}
-.cond h3{font-size:20px;margin-bottom:12px}
-.cond ul{margin:0;padding-left:18px;display:grid;gap:8px;font-size:14.5px}
-.cond li::marker{color:var(--talude)}
-.cond .pay{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--linha-forte);border:1px solid var(--linha-forte);border-radius:18px;overflow:hidden}
-.cond .pay div{background:var(--algodao);padding:20px 22px}
-.cond .pay .k{font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.7}
-.cond .pay .v{font-family:var(--serif);font-size:19px;margin-top:6px;line-height:1.35}
-@media (max-width:760px){.cond,.cond .pay{grid-template-columns:minmax(0,1fr)}}
-
-/* portfólio */
-.pf{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:14px}
-.pf figure{margin:0;position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/5;background:var(--talude)}
-.pf figure:first-child{aspect-ratio:auto}
-.pf img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s ease}
-.pf figure:hover img{transform:scale(1.04)}
-.pf figcaption{position:absolute;left:12px;bottom:12px;right:12px;font-size:12.5px;color:var(--orvalho);background:rgba(31,51,44,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:8px 12px;border-radius:10px}
-@media (max-width:760px){.pf{grid-template-columns:1fr 1fr}.pf figure:first-child{grid-column:1/-1;aspect-ratio:16/10}}
+.pay{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--linha-forte);border:1px solid var(--linha-forte);border-radius:18px;overflow:hidden}
+.pay > div{background:var(--algodao);padding:20px 22px;min-width:0}
+.pay .k{font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.7}
+.pay .v{font-family:var(--serif);font-size:26px;margin-top:6px;line-height:1.15;font-variant-numeric:tabular-nums}
+.pay .d{font-family:var(--serif);font-size:19px;margin-top:6px;line-height:1.35}
+.pay.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:760px){.pay,.pay.two{grid-template-columns:minmax(0,1fr)}}
+.notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,40px);margin-top:clamp(24px,3vw,36px)}
+.notes > div{min-width:0}
+.notes h3{font-size:20px;margin-bottom:12px}
+.notes ul{margin:0;padding-left:18px;display:grid;gap:8px;font-size:15px}
+.notes li::marker{color:var(--talude)}
+.notes .full{grid-column:1/-1}
+@media (max-width:760px){.notes{grid-template-columns:minmax(0,1fr)}}
 
 /* aceite */
 .accept{background:var(--mata);color:var(--orvalho);border-top:0}
 .accept .grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,72px);align-items:start}
-.accept h2{font-size:clamp(34px,4.6vw,58px)}
+.accept h2{font-size:clamp(34px,4.6vw,56px)}
 .accept h2 em{color:var(--rebrota)}
 .accept .sum{margin-top:22px;font-size:15px;opacity:.9;max-width:52ch}
 .accept .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.sign{background:rgba(229,250,231,.06);border:1px solid rgba(229,250,231,.16);border-radius:20px;padding:24px}
+.sign{background:rgba(229,250,231,.06);border:1px solid rgba(229,250,231,.16);border-radius:20px;padding:24px;min-width:0}
 .sign .row{display:flex;justify-content:space-between;gap:14px;padding:11px 0;font-size:14px}
 .sign .row + .row{border-top:1px solid rgba(229,250,231,.12)}
 .sign .row span{opacity:.7}
@@ -246,40 +202,36 @@ tr.row.out td{text-decoration:line-through;text-decoration-color:rgba(43,68,59,.
 footer{background:var(--mata-3);color:var(--orvalho);font-size:12.5px;padding-block:22px}
 footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;opacity:.75}
 
-/* revelação ao rolar: estado de repouso visível */
 .js .rv.pre{opacity:0;transform:translateY(22px)}
 .rv{transition:opacity .8s ease, transform .9s cubic-bezier(.2,.7,.2,1)}
-.js .sh.pre .n::after{transform:scaleX(0)}
 
 .err{max-width:560px;margin:80px auto;padding:0 16px;text-align:center}
 .err h1{font-size:34px;margin-bottom:12px}
 
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
-/* impressão / PDF */
 @page{size:A4;margin:14mm 12mm}
 @media print{
   body{background:#fff;font-size:11pt}
-  .bar,.demo,.no-print,.cover canvas,.frame,.cover .ctas{display:none!important}
+  .bar,.demo,.no-print,.cover canvas{display:none!important}
   .cover{background:#fff;color:var(--mata)}
   .cover .grain{display:none}
   .cover .logo-h{--leaf-d:#2B443B;--word:#2B443B}
   .cover-meta{display:block!important;opacity:1}
-  .cover-meta b{color:var(--mata)}
-  .cover-grid{grid-template-columns:1fr;padding-block:10mm 6mm}
-  .cover h1 em{color:var(--mata)}
-  section{padding-block:8mm;break-inside:auto}
-  .sh,.kpis,.guar,.sign,.pkg,.g-row,tr{break-inside:avoid}
-  .pkg{background:#fff!important;color:var(--mata)!important;box-shadow:none!important}
-  .pkg[aria-checked="true"]{border:2.5px solid var(--mata)}
-  .pkg .flag{border:1px solid var(--mata)}
-  .guar,.accept{background:#fff;color:var(--mata);border:1.5px solid var(--mata)}
-  .ring .c-bg{stroke:var(--linha-forte)}
-  .ring .c-fg{stroke:var(--mata)}
+  .cover-meta b,.cover h1 em,.cover .valid b{color:var(--mata)}
+  .cover-body{padding-block:8mm 6mm}
+  .cover .valid{border-color:var(--linha-forte)}
+  section{padding-block:8mm}
+  .sh,.kpis,.offer,.sign,.addon,.pay,tr{break-inside:avoid}
+  .offer{box-shadow:none;border:1.5px solid var(--mata)}
+  .offer .main{background:#fff;color:var(--mata)}
+  .offer .main .eyebrow,.offer .main h3 em,.offer .price b{color:var(--mata)}
+  .offer .price{border-color:var(--linha-forte)}
+  .addon[aria-checked="false"]{display:none}
+  .accept{background:#fff;color:var(--mata);border:1.5px solid var(--mata)}
   .sign{border-color:var(--linha-forte)}
   .sign .row b.tot,.accept h2 em{color:var(--mata)}
   .sig-lines div{border-color:var(--mata)}
-  .pf{display:none}
   .js .rv.pre{opacity:1;transform:none}
   footer{background:#fff;color:var(--mata)}
   table{min-width:0}
@@ -307,37 +259,18 @@ const WA_PADRAO = '5531975005106';
 
 /* Proposta de exemplo — usada só quando o link não traz dados. */
 const EXEMPLO = {
-  v:1, num:'SV-2026-000', emissao:'2026-10-06', validadeDias:15,
-  cliente:{empresa:'Construtora Exemplo Ltda.', contato:'Eng. Marina Duarte', cargo:'Coordenação de obras', telefone:'', email:''},
-  obra:{nome:'Taludes do Loteamento Vale Verde', municipio:'Nova Lima — MG', tipo:'Loteamento · cortes e aterros', area:18500, inclinacao:'1V:1,5H (34°)', solo:'Saprolito argilo-siltoso, baixa fertilidade', acesso:'Caminhão-pipa até a crista dos taludes'},
-  diagnostico:'Na visita técnica encontramos taludes de corte e aterro com solo exposto há mais de um período chuvoso, sulcos de erosão em formação e carreamento de sedimentos para o sistema de drenagem.\n\nA proposta é proteger o solo já na primeira aplicação e formar cobertura vegetal contínua antes da próxima estação de chuvas, com documentação técnica para o licenciamento.',
-  modo:'pacotes', destaque:'P',
-  pacotes:{
-    E:{nome:'Essencial', resumo:'Hidrossemeadura completa em toda a área, com garantia de cobertura.'},
-    P:{nome:'Proteção', resumo:'Essencial + biomanta nos trechos mais íngremes e sujeitos a erosão.'},
-    C:{nome:'Recuperação completa', resumo:'Proteção + manutenção por 90 dias e relatório técnico para o PRAD.'}
-  },
-  itens:[
-    {d:'Mobilização e desmobilização de equipe e caminhão hidrossemeador', u:'vb', q:1, p:4800, k:'EPC'},
-    {d:'Hidrossemeadura com sementes, mulch de celulose, fertilizante, hidrorretentor e fixador', u:'m²', q:18500, p:3.6, k:'EPC'},
-    {d:'Biomanta antierosiva de fibra de coco, grampeada, nos trechos críticos', u:'m²', q:2400, p:11.5, k:'PC'},
-    {d:'Irrigação de apoio e manutenção da cobertura', u:'mês', q:3, p:5200, k:'C'},
-    {d:'Relatório técnico com registro fotográfico para PRAD', u:'un', q:1, p:3800, k:'C'}
-  ],
-  spec:{
-    sementes:'Mix de gramíneas (braquiária, capim-gordura) e leguminosas (calopogônio, feijão-guandu, crotalária)',
-    taxaSementes:'120 kg/ha',
-    mulch:'Fibra de celulose para hidrossemeadura', taxaMulch:'2.000 kg/ha',
-    adubo:'NPK 04-14-08, dose ajustada à análise de solo', taxaAdubo:'500 kg/ha',
-    hidrorretentor:'Polímero hidrorretentor', taxaHidro:'40 kg/ha',
-    fixador:'Adesivo vegetal biodegradável', taxaFixador:'80 kg/ha'
-  },
-  prazoDias:20, garantia:{cobertura:90, dias:90},
-  pagamento:{entrada:'30% na mobilização', saldo:'70% por medição', prazo:'15 dias da aprovação do boletim'},
-  exclusoes:['Fornecimento de água para a calda e irrigação, quando não incluso no pacote','Limpeza, conformação ou retaludamento do terreno','Obras de drenagem (canaletas, descidas d’água)','Licenças e taxas junto a órgãos ambientais'],
-  contratante:['Garantir acesso do caminhão até a crista dos taludes','Indicar ponto de captação de água a até 2 km da frente de serviço','Manter a área isolada de tráfego e animais durante a germinação','Aprovar os boletins de medição em até 5 dias úteis'],
-  secoes:{tecnica:true, cronograma:true, garantia:true, portfolio:true},
-  vendedor:{nome:'Equipe técnica Solo Verde', cargo:'Hidrossemeadura e controle de erosão', whatsapp:WA_PADRAO, email:'contato@soloverdeambiental.com.br'},
+  v:2, num:'SV-2026-000', emissao:'2026-10-06', validadeDias:10,
+  cliente:{empresa:'Residencial Exemplo', contato:'Sr. Carlos Andrade', cargo:'', telefone:'', email:''},
+  obra:{nome:'Gramado da área de lazer', municipio:'Santa Luzia — MG', tipo:'Área residencial', area:1000, solo:''},
+  vegetacao:'Grama Bermuda',
+  diagnostico:'',
+  precoM2:9.9,
+  incluso:['Frete e mobilização da equipe','Plantio completo por hidrossemeadura','Corretivo de solo','Condicionador de solo','Insumos de primeira qualidade','Equipamentos e mão de obra especializada','Garantia de qualidade em todo o processo executado'],
+  irrigacao:{modo:'nao', descricao:'Irrigação de manutenção', detalhe:'Regas programadas para manter a umidade até a grama se estabelecer.', un:'vb', q:1, p:0},
+  pagamento:{entradaPct:50, entradaQuando:'na confirmação do pedido', saldoQuando:'no dia do plantio', cartao:'Ou no cartão de crédito em até 6x, com juros'},
+  avisos:['Realizamos a visita técnica antes da execução do serviço.','Os serviços são realizados mediante agendamento, conforme a nossa disponibilidade.'],
+  naoIncluso:[],
+  vendedor:{nome:'Equipe Solo Verde', whatsapp:WA_PADRAO, email:'contato@soloverdeambiental.com.br'},
   obs:''
 };
 
@@ -345,7 +278,6 @@ const EXEMPLO = {
 const $ = (s, el=document) => el.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const brl = v => (Number(v)||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
-const brl0 = v => (Number(v)||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
 const n0 = v => (Number(v)||0).toLocaleString('pt-BR',{maximumFractionDigits:2});
 const paras = t => String(t||'').split(/\n\s*\n/).map(p=>p.trim()).filter(Boolean).map(p=>'<p>'+esc(p).replace(/\n/g,'<br>')+'</p>').join('');
 const dataBR = iso => { const d = new Date((iso||'')+'T12:00:00'); return isNaN(d) ? '' : d.toLocaleDateString('pt-BR',{day:'2-digit',month:'long',year:'numeric'}); };
@@ -358,20 +290,15 @@ async function decode(s){
   const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('deflate-raw'));
   return JSON.parse(await new Response(stream).text());
 }
-
 function merge(base, o){
-  const out = Array.isArray(base) ? [] : {...base};
+  const out = {...base};
   for (const k in o){
     const v = o[k];
     out[k] = (v && typeof v === 'object' && !Array.isArray(v) && base && typeof base[k] === 'object' && !Array.isArray(base[k])) ? merge(base[k], v) : v;
   }
   return out;
 }
-
-const totalDe = (P, key) => P.itens.filter(it => P.modo !== 'pacotes' || (it.k||'').includes(key)).reduce((s,it)=> s + (Number(it.q)||0)*(Number(it.p)||0), 0);
-
-/* contador animado */
-function countTo(el, to, fmt, ms=1100){
+function countTo(el, to, fmt, ms=1000){
   const from = Number(el.dataset.val || 0); el.dataset.val = to;
   if (reduce){ el.textContent = fmt(to); return; }
   const t0 = performance.now();
@@ -379,57 +306,32 @@ function countTo(el, to, fmt, ms=1100){
   requestAnimationFrame(step);
 }
 
-/* ---------- ícones de insumo ---------- */
-const IC = {
-  sementes:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2B443B" stroke-width="1.6"><ellipse cx="8" cy="9" rx="3.2" ry="2" transform="rotate(-35 8 9)"/><ellipse cx="16" cy="8" rx="3.2" ry="2" transform="rotate(25 16 8)"/><ellipse cx="12" cy="16" rx="3.2" ry="2" transform="rotate(-60 12 16)"/></svg>',
-  mulch:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2B443B" stroke-width="1.6" stroke-linecap="round"><path d="M4 7c4 0 4 3 8 3s4-3 8-3M4 12c4 0 4 3 8 3s4-3 8-3M4 17c4 0 4 3 8 3s4-3 8-3"/></svg>',
-  hidro:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2B443B" stroke-width="1.6"><path d="M12 3.5c3 3.8 5 6.8 5 9.5a5 5 0 0 1-10 0c0-2.7 2-5.7 5-9.5z"/></svg>',
-  adubo:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2B443B" stroke-width="1.6" stroke-linecap="round"><path d="M3 9h18M5 14h14M8 19h8M12 3v3"/></svg>',
-  fixador:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2B443B" stroke-width="1.6" stroke-linejoin="round"><path d="M3 20l11-11h7M3 20h18"/><path d="M8 15l2 2M11 12l2 2"/></svg>'
-};
-
 /* ---------- render ---------- */
 function render(P, demo){
   const app = $('#app');
-  const S = P.secoes || {};
-  const pac = P.modo === 'pacotes';
-  const keys = ['E','P','C'];
-  let sel = pac ? (P.destaque || 'P') : null;
-  const area = Number(P.obra.area)||0;
-  const totais = Object.fromEntries(keys.map(k=>[k,totalDe(P,k)]));
-  const minimo = pac ? Math.min(...keys.map(k=>totais[k]).filter(v=>v>0)) : totalDe(P,'');
+  const area = Number(P.obra.area)||0, preco = Number(P.precoM2)||0;
+  const hidro = area*preco;
+  const irr = P.irrigacao || {}; const irrModo = irr.modo || 'nao';
+  const irrTotal = (Number(irr.q)||0)*(Number(irr.p)||0);
+  let comIrr = irrModo === 'incluida';
   const validade = somaDias(P.emissao, P.validadeDias);
   const wa = String(P.vendedor?.whatsapp || WA_PADRAO).replace(/\D/g,'');
-  const gDias = Number(P.garantia?.dias)||0, prazo = Number(P.prazoDias)||0;
+  const veg = P.vegetacao || 'grama';
+  const pct = Math.max(0, Math.min(100, Number(P.pagamento?.entradaPct)||0));
+  const cliente = P.cliente.empresa || P.cliente.contato;
   let sec = 0; const N = () => String(++sec).padStart(2,'0');
-
-  document.title = `Proposta ${P.num} · ${P.cliente.empresa} · Solo Verde Ambiental`;
+  document.title = `Proposta ${P.num} · ${cliente} · Solo Verde Ambiental`;
 
   const etapas = [
-    ['Diagnóstico','Visita técnica, coleta de solo, levantamento de inclinação, drenagem e acesso.'],
-    ['Formulação','Mistura de sementes e insumos definida para o solo e o clima da obra.'],
-    ['Aplicação','Jato mecanizado com cobertura uniforme, inclusive nos trechos íngremes.'],
-    ['Germinação','Acompanhamento da emergência e ressemeadura das falhas.'],
-    ['Entrega','Vistoria de cobertura, relatório fotográfico e ART do responsável técnico.']
+    ['Visita técnica','Avaliamos o terreno, o solo e a drenagem antes da execução.'],
+    ['Preparo do solo','Aplicação de corretivo e condicionador de solo conforme a necessidade.'],
+    ['Hidrossemeadura','Jato mecanizado com sementes, fibra, nutrientes e fixador, em cobertura uniforme.'],
+    ['Germinação','Com umidade adequada, os primeiros brotos aparecem nas primeiras semanas.'],
+    ['Área coberta','Solo protegido contra erosão e coberto de verde.']
   ];
-
-  const spec = P.spec || {};
-  const insumos = [
-    ['sementes','Sementes', spec.sementes, spec.taxaSementes],
-    ['mulch','Mulch', spec.mulch, spec.taxaMulch],
-    ['adubo','Nutrientes', spec.adubo, spec.taxaAdubo],
-    ['hidro','Hidrorretentor', spec.hidrorretentor, spec.taxaHidro],
-    ['fixador','Fixador', spec.fixador, spec.taxaFixador]
-  ].filter(x=>x[2]);
-
-  /* cronograma em dias */
-  const fases = [
-    ['Mobilização','Equipe, caminhão e insumos na obra', 0, 3, ''],
-    ['Aplicação', `${n0(area)} m² em frentes de serviço`, 3, 3+prazo, ''],
-    ['Germinação','Acompanhamento e ressemeadura de falhas', 3+Math.round(prazo*0.4), 3+prazo+gDias, 'lime'],
-    ['Vistoria e entrega', `Medição de cobertura ≥ ${P.garantia?.cobertura||90}% e relatório`, 3+prazo+gDias, 3+prazo+gDias+7, 'lime2']
-  ];
-  const fim = fases[fases.length-1][3];
+  const facts = [['Local',P.obra.municipio],['Tipo de área',P.obra.tipo],['Solo',P.obra.solo]].filter(x=>x[1]);
+  const quem = [P.cliente.contato, P.cliente.cargo].filter(Boolean).map(esc).join(', ');
+  const para = [quem && `<strong>${quem}</strong>`, P.cliente.empresa && `<strong>${esc(P.cliente.empresa)}</strong>`].filter(Boolean).join(', ');
 
   app.innerHTML = `
   ${demo ? '<div class="demo">Exemplo de proposta. Os dados abaixo são ilustrativos.</div>' : ''}
@@ -441,19 +343,14 @@ function render(P, demo){
         <svg class="logo-h" viewBox="0 0 1074 280" role="img" aria-label="Solo Verde Ambiental"><use href="#sv-lockup"/></svg>
         <div class="cover-meta">Proposta comercial<b class="num">${esc(P.num)}</b>${esc(dataBR(P.emissao))}</div>
       </div>
-      <div class="cover-grid">
-        <div>
-          <div class="eyebrow ld" style="--i:1"><span class="dot"></span>Proposta ${esc(P.num)} · Hidrossemeadura</div>
-          <h1 class="ld" style="--i:2">${esc(P.obra.nome)}<br><em>de solo exposto a talude vivo.</em></h1>
-          <p class="for ld" style="--i:3">Preparada para <strong>${esc(P.cliente.contato)}</strong>${P.cliente.cargo ? ', '+esc(P.cliente.cargo) : ''}, <strong>${esc(P.cliente.empresa)}</strong>. ${esc(P.obra.municipio)}.</p>
-          <div class="ctas ld no-print" style="--i:4">
-            <a class="btn btn-lime" href="#investimento">Ver investimento <svg><use href="#i-arrow"/></svg></a>
-            <button class="btn btn-ghost-l" type="button" data-print>Salvar em PDF</button>
-          </div>
-        </div>
-        <div class="frame ld" style="--i:3">
-          <video autoplay muted loop playsinline poster="hero-poster.jpg" preload="metadata"><source src="hero.mp4" type="video/mp4"></video>
-          <div class="tag"><span>Válida até</span><b class="num">${esc(validade)}</b></div>
+      <div class="cover-body">
+        <div class="eyebrow ld" style="--i:1"><span class="dot"></span>Proposta ${esc(P.num)} · Hidrossemeadura</div>
+        <h1 class="ld" style="--i:2">${esc(P.obra.nome)}<br><em>de solo exposto a área verde.</em></h1>
+        <p class="for ld" style="--i:3">Preparada para ${para}.${P.obra.municipio ? ' '+esc(P.obra.municipio)+'.' : ''}</p>
+        <div class="valid ld" style="--i:4">Proposta válida até <b class="num">${esc(validade)}</b></div>
+        <div class="ctas ld no-print" style="--i:5">
+          <a class="btn btn-lime" href="#investimento">Ver investimento <svg><use href="#i-arrow"/></svg></a>
+          <button class="btn btn-ghost-l" type="button" data-print>Salvar em PDF</button>
         </div>
       </div>
     </div>
@@ -461,167 +358,105 @@ function render(P, demo){
 
   <div class="bar">
     <div class="wrap">
-      <div class="id"><svg viewBox="195 195 910 910" aria-hidden="true"><use href="#sv-icon"/></svg><span><span class="lbl">Proposta </span><b>${esc(P.num)}</b> · ${esc(P.cliente.empresa)}</span></div>
-      <nav aria-label="Seções da proposta">
-        <a href="#diagnostico">Diagnóstico</a><a href="#solucao">Solução</a><a href="#investimento">Investimento</a>${S.cronograma?'<a href="#cronograma">Cronograma</a>':''}<a href="#condicoes">Condições</a>
-      </nav>
+      <div class="id"><svg viewBox="195 195 910 910" aria-hidden="true"><use href="#sv-icon"/></svg><span><span class="lbl">Proposta </span><b>${esc(P.num)}</b> · ${esc(cliente)}</span></div>
+      <nav aria-label="Seções da proposta"><a href="#area">A área</a><a href="#solucao">Como fazemos</a><a href="#investimento">Investimento</a><a href="#condicoes">Condições</a></nav>
       <a class="btn btn-dark" href="#aceite">Aprovar</a>
     </div>
   </div>
 
   <main>
-    <section id="diagnostico">
+    <section id="area">
       <div class="wrap">
         <div class="sh rv"><div class="n">${N()}</div><div><h2>O que encontramos na área</h2></div></div>
         <div class="body-col">
           <div class="kpis rv">
-            <div class="kpi"><div class="v" data-count="${area}" data-fmt="int">0<small>m²</small></div><div class="l">Área tratada</div></div>
-            <div class="kpi"><div class="v" data-count="${prazo}" data-fmt="int">0<small>dias</small></div><div class="l">Prazo de aplicação</div></div>
-            <div class="kpi"><div class="v" data-count="${P.garantia?.cobertura||90}" data-fmt="int">0<small>%</small></div><div class="l">Cobertura garantida</div></div>
-            <div class="kpi"><div class="v" data-count="${area ? minimo/area : 0}" data-fmt="m2">R$ 0</div><div class="l">${pac?'A partir de, por m²':'Custo por m²'}</div></div>
+            <div class="kpi"><div class="v" data-count="${area}">${n0(area)}<small>m²</small></div><div class="l">Área a ser plantada</div></div>
+            <div class="kpi"><div class="v txt">${esc(veg)}</div><div class="l">Vegetação</div></div>
+            <div class="kpi"><div class="v" data-count="${preco}" data-fmt="brl">${brl(preco)}</div><div class="l">Valor por m²</div></div>
           </div>
-          <div class="diag" style="margin-top:clamp(28px,4vw,48px)">
-            <div class="txt rv">${paras(P.diagnostico)}</div>
-            <dl class="facts rv">
-              ${[['Local',P.obra.municipio],['Tipo de obra',P.obra.tipo],['Inclinação',P.obra.inclinacao],['Solo',P.obra.solo],['Acesso',P.obra.acesso]].filter(x=>x[1]).map(([a,b])=>`<div><dt>${esc(a)}</dt><dd>${esc(b)}</dd></div>`).join('')}
-            </dl>
-          </div>
+          ${P.diagnostico || facts.length ? `<div class="diag ${P.diagnostico ? '' : 'solo'}">
+            ${P.diagnostico ? `<div class="txt rv">${paras(P.diagnostico)}</div>` : ''}
+            ${facts.length ? `<dl class="facts rv">${facts.map(([a,b])=>`<div><dt>${esc(a)}</dt><dd>${esc(b)}</dd></div>`).join('')}</dl>` : ''}
+          </div>` : ''}
         </div>
       </div>
     </section>
 
     <section id="solucao">
       <div class="wrap">
-        <div class="sh rv"><div class="n">${N()}</div><div><h2>Como vamos devolver a cobertura ao solo</h2><p>Cada área é tratada como um projeto de engenharia: entendemos o solo antes de escolher a semente.</p></div></div>
+        <div class="sh rv"><div class="n">${N()}</div><div><h2>Como vamos deixar a área verde</h2><p>Do preparo do solo à germinação, com equipe e equipamentos próprios.</p></div></div>
         <div class="body-col">
-          <ol class="steps" id="steps">
-            ${etapas.map((e,i)=>`<li><div class="dot">${i+1}</div><h3>${e[0]}</h3><p>${e[1]}</p></li>`).join('')}
-          </ol>
+          <ol class="steps" id="steps">${etapas.map((e,i)=>`<li><div class="dot">${i+1}</div><h3>${e[0]}</h3><p>${e[1]}</p></li>`).join('')}</ol>
         </div>
       </div>
     </section>
-
-    ${S.tecnica && insumos.length ? `
-    <section id="especificacao">
-      <div class="wrap">
-        <div class="sh rv"><div class="n">${N()}</div><div><h2>Especificação da mistura</h2><p>Taxas de referência por hectare. A dose final de corretivos e fertilizantes é ajustada pela análise de solo.</p></div></div>
-        <div class="body-col">
-          <div class="spec rv">
-            ${insumos.map(([ic,t,d,r])=>`<div><span class="ic">${IC[ic]}</span><h3>${t}</h3><p>${esc(d)}</p>${r?`<span class="rate num">${esc(r)}</span>`:''}</div>`).join('')}
-          </div>
-          <p class="norm rv">Execução conforme boas práticas de revegetação e as especificações de hidrossemeadura adotadas em obras de infraestrutura. O serviço é considerado concluído quando a área atinge ${P.garantia?.cobertura||90}% de cobertura vegetal.</p>
-        </div>
-      </div>
-    </section>` : ''}
 
     <section id="investimento">
       <div class="wrap">
-        <div class="sh rv"><div class="n">${N()}</div><div><h2>Investimento</h2><p>${pac ? 'Escolha o nível de proteção. A planilha e o total são atualizados conforme o pacote.' : 'Planilha de quantidades e preços para a área informada.'}</p></div></div>
+        <div class="sh rv"><div class="n">${N()}</div><div><h2>Investimento</h2><p>Valor calculado pela metragem da área, com tudo o que é preciso para o plantio.</p></div></div>
         <div class="body-col">
-          ${pac ? `<div class="pkgs" role="radiogroup" aria-label="Pacotes">
-            ${keys.map(k=>{
-              const pk = P.pacotes?.[k] || {};
-              return `<button class="pkg rv" type="button" role="radio" data-k="${k}" aria-checked="${k===sel}">
-                ${k===P.destaque?'<span class="flag">Recomendado</span>':''}
-                <span class="radio" aria-hidden="true"></span>
-                <span class="nm">${esc(pk.nome||k)}</span>
-                <span class="rs">${esc(pk.resumo||'')}</span>
-                <ul>${P.itens.map(it=>`<li class="${(it.k||'').includes(k)?'':'off'}"><svg><use href="#i-check"/></svg><span>${esc(shortDesc(it.d))}</span></li>`).join('')}</ul>
-                <span class="pr"><b>${brl0(totais[k])}</b><span>${area?brl(totais[k]/area)+' por m²':''}</span></span>
-              </button>`;}).join('')}
-          </div>` : ''}
+          <div class="offer rv">
+            <div class="main">
+              <div class="eyebrow">Hidrossemeadura</div>
+              <h3>Plantio de <em>${esc(veg)}</em></h3>
+              <div class="calc"><b>${n0(area)} m²</b><i>×</i><b>${brl(preco)}</b><span>por m²</span></div>
+              <div class="price"><span>Valor do plantio</span><b>${brl(hidro)}</b></div>
+            </div>
+            <div class="inc">
+              <h4>O que está incluso</h4>
+              <ul>${(P.incluso||[]).map(x=>`<li><svg><use href="#i-check"/></svg><span>${esc(x)}</span></li>`).join('')}</ul>
+            </div>
+          </div>
+
+          ${irrModo === 'opcional' ? `
+          <button class="addon rv" type="button" role="checkbox" aria-checked="false" id="addon">
+            <span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#96F456" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+            <span class="t"><b>Adicionar ${esc(irr.descricao||'irrigação')}</b><span>${esc(irr.detalhe||'Serviço opcional, contratado à parte.')}</span></span>
+            <span class="p"><small>Opcional</small>+ ${brl(irrTotal)}</span>
+          </button>` : ''}
+
           <div class="sheet rv">
-            <div class="sheet-h"><h3>Planilha de quantidades</h3><span id="sheetSub">${pac ? 'Pacote '+esc(P.pacotes?.[sel]?.nome||'') : 'Valores em reais'}</span></div>
+            <h3>Planilha de quantidades</h3>
             <div class="tbl"><table>
-              <thead><tr><th>Item</th><th>Descrição</th><th>Un.</th><th class="r">Qtd.</th><th class="r">Preço unit.</th><th class="r">Total</th></tr></thead>
+              <thead><tr><th>Serviço</th><th>Un.</th><th class="r">Qtd.</th><th class="r">Preço unit.</th><th class="r">Total</th></tr></thead>
               <tbody>
-                ${P.itens.map((it,i)=>`<tr class="row" data-k="${esc(it.k||'')}"><td class="i">${i+1}</td><td>${esc(it.d)}</td><td>${esc(it.u)}</td><td class="r">${n0(it.q)}</td><td class="r">${brl(it.p)}</td><td class="r">${brl((Number(it.q)||0)*(Number(it.p)||0))}</td></tr>`).join('')}
+                <tr><td>Hidrossemeadura com ${esc(veg)}, insumos, corretivo e condicionador de solo</td><td>m²</td><td class="r">${n0(area)}</td><td class="r">${brl(preco)}</td><td class="r">${brl(hidro)}</td></tr>
+                ${irrModo !== 'nao' ? `<tr id="irrRow" ${comIrr?'':'hidden'}><td>${esc(irr.descricao||'Irrigação')}</td><td>${esc(irr.un||'vb')}</td><td class="r">${n0(irr.q)}</td><td class="r">${brl(irr.p)}</td><td class="r">${brl(irrTotal)}</td></tr>` : ''}
               </tbody>
             </table></div>
             <div class="total">
-              <div class="lbl">Valor total da proposta<small>Impostos inclusos. Medição por m² efetivamente executado.</small></div>
-              <div><div class="big" id="bigTotal">R$ 0</div><div class="m2" id="m2"></div></div>
+              <div class="lbl">Valor total do pedido</div>
+              <div><div class="big" id="bigTotal"></div><div class="m2" id="m2"></div></div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    ${S.cronograma ? `
-    <section id="cronograma">
-      <div class="wrap">
-        <div class="sh rv"><div class="n">${N()}</div><div><h2>Cronograma</h2><p>Contado em dias a partir da ordem de serviço. A germinação depende de chuva ou irrigação de apoio.</p></div></div>
-        <div class="body-col">
-          <div class="gantt" id="gantt">
-            ${fases.map(f=>`<div class="g-row rv"><div class="t">${f[0]}<small>${esc(f[1])}</small></div><div class="g-track"><div class="g-bar ${f[4]}" style="left:${f[2]/fim*100}%;width:${(f[3]-f[2])/fim*100}%"></div></div></div>`).join('')}
-            <div class="g-axis"><div></div><div><span>Dia 0</span><span>Dia ${Math.round(fim/2)}</span><span>Dia ${fim}</span></div></div>
-          </div>
-        </div>
-      </div>
-    </section>` : ''}
-
-    ${S.garantia ? `
-    <section id="garantia">
-      <div class="wrap">
-        <div class="sh rv"><div class="n">${N()}</div><div><h2>Garantia de resultado</h2></div></div>
-        <div class="body-col">
-          <div class="guar rv">
-            <div class="ring" id="ring">
-              <svg viewBox="0 0 120 120"><circle class="c-bg" cx="60" cy="60" r="52"/><circle class="c-fg" cx="60" cy="60" r="52" pathLength="100" stroke-dasharray="100" stroke-dashoffset="${100-(P.garantia?.cobertura||90)}"/></svg>
-              <div class="lbl"><b class="num">${P.garantia?.cobertura||90}%</b><span>de cobertura</span></div>
-            </div>
-            <div>
-              <h3>Cobertura vegetal de ${P.garantia?.cobertura||90}% em até ${gDias} dias, ou refazemos.</h3>
-              <p>Se a vistoria mostrar falhas abaixo do índice garantido, a ressemeadura é feita sem custo adicional, desde que as condições de responsabilidade do contratante tenham sido cumpridas.</p>
-              <ul>
-                <li><svg><use href="#i-check"/></svg><span>Vistoria de germinação com registro fotográfico datado</span></li>
-                <li><svg><use href="#i-check"/></svg><span>Ressemeadura das falhas incluída no preço</span></li>
-                <li><svg><use href="#i-check"/></svg><span>ART do responsável técnico e relatório final para o licenciamento</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>` : ''}
 
     <section id="condicoes">
       <div class="wrap">
         <div class="sh rv"><div class="n">${N()}</div><div><h2>Condições comerciais</h2></div></div>
         <div class="body-col">
-          <div class="cond">
-            <div class="pay rv">
-              <div><div class="k">Entrada</div><div class="v">${esc(P.pagamento?.entrada)}</div></div>
-              <div><div class="k">Saldo</div><div class="v">${esc(P.pagamento?.saldo)}</div></div>
-              <div><div class="k">Prazo de pagamento</div><div class="v">${esc(P.pagamento?.prazo)}</div></div>
-            </div>
-            <div class="rv"><h3>Não incluso nesta proposta</h3><ul>${(P.exclusoes||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
-            <div class="rv"><h3>Cabe ao contratante</h3><ul>${(P.contratante||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
-            ${P.obs ? `<div class="rv" style="grid-column:1/-1"><h3>Observações</h3>${paras(P.obs)}</div>` : ''}
+          <div class="pay ${P.pagamento?.cartao ? '' : 'two'} rv">
+            <div><div class="k">${pct}% ${esc(P.pagamento?.entradaQuando||'')}</div><div class="v" id="payIn"></div></div>
+            <div><div class="k">Saldo ${esc(P.pagamento?.saldoQuando||'')}</div><div class="v" id="payOut"></div></div>
+            ${P.pagamento?.cartao ? `<div><div class="k">Cartão de crédito</div><div class="d">${esc(P.pagamento.cartao)}</div></div>` : ''}
+          </div>
+          <div class="notes">
+            <div class="rv"><h3>Bom saber</h3><ul>${(P.avisos||[]).map(x=>`<li>${esc(x)}</li>`).join('')}<li>Proposta válida por ${esc(P.validadeDias)} dias, até ${esc(validade)}.</li></ul></div>
+            ${(P.naoIncluso||[]).length ? `<div class="rv"><h3>Não incluso</h3><ul>${P.naoIncluso.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}
+            ${P.obs ? `<div class="rv full"><h3>Observações</h3>${paras(P.obs)}</div>` : ''}
           </div>
         </div>
       </div>
     </section>
-
-    ${S.portfolio ? `
-    <section id="obras">
-      <div class="wrap">
-        <div class="sh rv"><div class="n">${N()}</div><div><h2>Obras que já voltaram a ser verdes</h2><p>Registros de campo da Solo Verde em Minas Gerais.</p></div></div>
-        <div class="body-col">
-          <div class="pf">
-            <figure class="rv"><img src="obras/igarape/aplicacao-talude-p.jpg" alt="Aplicação de hidrossemeadura em talude em Igarapé, MG" loading="lazy"><figcaption>Aplicação em talude · Igarapé — MG</figcaption></figure>
-            <figure class="rv"><img src="obras/igarape/antes-p.jpg" alt="Talude com solo exposto antes da aplicação" loading="lazy"><figcaption>Antes</figcaption></figure>
-            <figure class="rv"><img src="obras/igarape/durante-p.jpg" alt="O mesmo talude logo após a hidrossemeadura" loading="lazy"><figcaption>Logo após a aplicação</figcaption></figure>
-          </div>
-        </div>
-      </div>
-    </section>` : ''}
 
     <section class="accept" id="aceite">
       <div class="wrap grid">
         <div>
           <div class="eyebrow"><span class="dot"></span>Aceite</div>
           <h2 style="margin-top:16px">Vamos transformar esse solo em <em>vida</em>?</h2>
-          <p class="sum">Ao aprovar, nossa equipe confirma a data de mobilização e envia o contrato. Esta proposta é válida até <b class="num">${esc(validade)}</b>.</p>
+          <p class="sum">Ao aprovar, nossa equipe agenda a visita técnica e a data do plantio. Esta proposta é válida até <b class="num">${esc(validade)}</b>.</p>
           <div class="ctas no-print">
             <a class="btn btn-lime" id="approve" target="_blank" rel="noopener" href="#"><svg><use href="#i-wa"/></svg>Aprovar pelo WhatsApp</a>
             <a class="btn btn-ghost-l" id="ask" target="_blank" rel="noopener" href="#">Tirar uma dúvida</a>
@@ -630,100 +465,65 @@ function render(P, demo){
         </div>
         <div class="sign">
           <div class="row"><span>Proposta</span><b class="num">${esc(P.num)}</b></div>
-          <div class="row"><span>Cliente</span><b>${esc(P.cliente.empresa)}</b></div>
-          <div class="row"><span>Obra</span><b>${esc(P.obra.nome)}</b></div>
-          ${pac?'<div class="row"><span>Pacote</span><b id="sgPkg"></b></div>':''}
+          <div class="row"><span>Cliente</span><b>${esc(cliente)}</b></div>
+          <div class="row"><span>Área</span><b>${esc(P.obra.nome)} · ${n0(area)} m²</b></div>
+          ${irrModo !== 'nao' ? '<div class="row"><span>Irrigação</span><b id="sgIrr"></b></div>' : ''}
           <div class="row"><span>Valor total</span><b class="tot num" id="sgTot"></b></div>
-          <div class="row"><span>Responsável</span><b>${esc(P.vendedor?.nome||'')}</b></div>
-          <div class="sig-lines"><div>Solo Verde Ambiental</div><div>${esc(P.cliente.empresa)}</div></div>
+          <div class="sig-lines"><div>Solo Verde Ambiental</div><div>${esc(cliente)}</div></div>
         </div>
       </div>
     </section>
   </main>
   <footer><div class="wrap"><span>Solo Verde Ambiental · Hidrossemeadura, revegetação e controle de erosão · Belo Horizonte — MG</span><span>${esc(P.vendedor?.email||'contato@soloverdeambiental.com.br')} · (31) 9 7500-5106</span></div></footer>`;
 
-  /* seleção de pacote */
+  let first = true;
   function apply(){
-    const tot = pac ? totais[sel] : totalDe(P,'');
-    countTo($('#bigTotal'), tot, brl);
-    $('#m2').textContent = area ? brl(tot/area)+' por m² · '+n0(area)+' m²' : '';
+    const tot = hidro + (comIrr ? irrTotal : 0);
+    const big = $('#bigTotal');
+    if (first){ big.dataset.val = tot; big.textContent = brl(tot); first = false; } else countTo(big, tot, brl);
+    $('#m2').textContent = area ? 'Valor médio de '+brl(tot/area)+' por m²' : '';
     $('#sgTot').textContent = brl(tot);
-    if (pac){
-      document.querySelectorAll('.pkg').forEach(b=>b.setAttribute('aria-checked', b.dataset.k===sel));
-      document.querySelectorAll('tr.row').forEach(r=>r.classList.toggle('out', !r.dataset.k.includes(sel)));
-      $('#sheetSub').textContent = 'Pacote '+(P.pacotes?.[sel]?.nome||'');
-      $('#sgPkg').textContent = P.pacotes?.[sel]?.nome||'';
-    }
-    const pkgName = pac ? ` no pacote ${P.pacotes?.[sel]?.nome}` : '';
-    const msg = `Olá! Aprovo a proposta ${P.num} da Solo Verde Ambiental para ${P.obra.nome}${pkgName}, no valor de ${brl(tot)}.\n\n${P.cliente.contato} · ${P.cliente.empresa}`;
+    $('#payIn').textContent = brl(tot*pct/100);
+    $('#payOut').textContent = brl(tot - tot*pct/100);
+    if ($('#sgIrr')) $('#sgIrr').textContent = comIrr ? 'Incluída · '+brl(irrTotal) : 'Não incluída';
+    if ($('#irrRow')) $('#irrRow').hidden = !comIrr;
+    if ($('#addon')) $('#addon').setAttribute('aria-checked', comIrr);
+    const extra = comIrr ? `, com ${(irr.descricao||'irrigação').toLowerCase()}` : '';
+    const msg = `Olá! Aprovo a proposta ${P.num} da Solo Verde Ambiental: hidrossemeadura com ${veg} em ${n0(area)} m²${extra}, no valor total de ${brl(tot)}.\n\n${[P.cliente.contato, P.cliente.empresa].filter(Boolean).join(' · ')}`;
     $('#approve').href = 'https://wa.me/'+wa+'?text='+encodeURIComponent(msg);
     $('#ask').href = 'https://wa.me/'+wa+'?text='+encodeURIComponent(`Olá! Tenho uma dúvida sobre a proposta ${P.num} (${P.obra.nome}).`);
   }
-  document.querySelectorAll('.pkg').forEach(b=>b.addEventListener('click',()=>{ sel=b.dataset.k; apply(); }));
-  $('.pkgs')?.addEventListener('keydown', e=>{
-    if(!['ArrowRight','ArrowLeft','ArrowDown','ArrowUp'].includes(e.key)) return;
-    e.preventDefault(); const i = keys.indexOf(sel), d = (e.key==='ArrowRight'||e.key==='ArrowDown')?1:-1;
-    sel = keys[(i+d+3)%3]; apply(); document.querySelector(`.pkg[data-k="${sel}"]`).focus();
-  });
+  $('#addon')?.addEventListener('click', ()=>{ comIrr = !comIrr; apply(); });
   document.querySelectorAll('[data-print]').forEach(b=>b.addEventListener('click',()=>{ document.querySelectorAll('.rv.pre').forEach(e=>e.classList.remove('pre')); window.print(); }));
   apply();
-
   setupReveal();
   spray($('#spray'));
 }
 
-function shortDesc(d){ d = String(d||''); const cut = d.split(/,| com | nos | de equipe/)[0]; return cut.length > 4 ? cut : d; }
-
 /* revelação ao rolar: só esconde o que está abaixo da dobra no carregamento */
 function setupReveal(){
-  const kpiDone = new WeakSet();
-  const fire = el => {
+  const run = el => {
     el.classList.remove('pre');
     el.querySelectorAll('[data-count]').forEach(c=>{
-      if (kpiDone.has(c)) return; kpiDone.add(c);
-      const to = Number(c.dataset.count), small = c.querySelector('small');
-      const sfx = small ? small.outerHTML : '';
-      const fmt = c.dataset.fmt==='m2' ? (v=>brl(v)) : (v=>Math.round(v).toLocaleString('pt-BR'));
-      if (reduce){ c.innerHTML = fmt(to)+sfx; return; }
+      if (c.dataset.done) return; c.dataset.done = 1;
+      const to = Number(c.dataset.count), small = c.querySelector('small'), sfx = small ? small.outerHTML : '';
+      const fmt = c.dataset.fmt==='brl' ? (v=>brl(v)) : (v=>Math.round(v).toLocaleString('pt-BR'));
       const t0 = performance.now();
       const step = t => { const k=Math.min(1,(t-t0)/1300), e=1-Math.pow(1-k,3); c.innerHTML = fmt(to*e)+sfx; if(k<1) requestAnimationFrame(step); };
       requestAnimationFrame(step);
     });
   };
-  // valores finais já no estado de repouso
-  document.querySelectorAll('[data-count]').forEach(c=>{
-    const small = c.querySelector('small'), to = Number(c.dataset.count);
-    c.innerHTML = (c.dataset.fmt==='m2'? brl(to) : Math.round(to).toLocaleString('pt-BR')) + (small?small.outerHTML:'');
-  });
-  const steps = $('#steps'), ring = $('#ring'), gantt = $('#gantt');
+  const steps = $('#steps');
   if (reduce || !('IntersectionObserver' in window)){ steps?.querySelectorAll('li').forEach(l=>l.classList.add('on')); return; }
-
-  const io = new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){ fire(en.target); io.unobserve(en.target);} }),{rootMargin:'0px 0px -8% 0px'});
+  const io = new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){ run(en.target); io.unobserve(en.target);} }),{rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.rv').forEach(el=>{
-    const r = el.getBoundingClientRect();
-    if (r.top > innerHeight){ el.classList.add('pre'); io.observe(el); }
-    else if (el.querySelector('[data-count]')) { el.querySelectorAll('[data-count]').forEach(c=>c.innerHTML='0'+(c.querySelector('small')?.outerHTML||'')); fire(el); }
+    if (el.getBoundingClientRect().top > innerHeight){ el.classList.add('pre'); io.observe(el); }
   });
-
-  // linha das etapas
   if (steps && steps.getBoundingClientRect().top > innerHeight){
     steps.style.setProperty('--p',0);
     new IntersectionObserver((es,o)=>es.forEach(en=>{ if(en.isIntersecting){ o.disconnect(); steps.style.setProperty('--p',1);
       steps.querySelectorAll('li').forEach((l,i)=>setTimeout(()=>l.classList.add('on'), 250+i*300)); } }),{rootMargin:'0px 0px -20% 0px'}).observe(steps);
   } else steps?.querySelectorAll('li').forEach(l=>l.classList.add('on'));
-
-  // anel de garantia
-  if (ring && ring.getBoundingClientRect().top > innerHeight){
-    const c = ring.querySelector('.c-fg'), target = c.getAttribute('stroke-dashoffset'), b = ring.querySelector('b'), pct = parseInt(b.textContent);
-    c.style.strokeDashoffset = 100;
-    new IntersectionObserver((es,o)=>es.forEach(en=>{ if(en.isIntersecting){ o.disconnect(); requestAnimationFrame(()=>{ c.style.strokeDashoffset = target; }); b.dataset.val=0; countTo(b,pct,v=>Math.round(v)+'%',1800); } }),{rootMargin:'0px 0px -15% 0px'}).observe(ring);
-  }
-
-  // barras do cronograma
-  if (gantt && gantt.getBoundingClientRect().top > innerHeight){
-    const bars = gantt.querySelectorAll('.g-bar'); bars.forEach(b=>b.style.transform='scaleX(0)');
-    new IntersectionObserver((es,o)=>es.forEach(en=>{ if(en.isIntersecting){ o.disconnect(); bars.forEach((b,i)=>setTimeout(()=>b.style.transform='scaleX(1)', i*220)); } }),{rootMargin:'0px 0px -15% 0px'}).observe(gantt);
-  }
 }
 
 /* ---------- capa: o jato de hidrossemeadura cobre o talude ---------- */
@@ -824,13 +624,15 @@ function spray(cv){
   let rt; addEventListener('resize', ()=>{ clearTimeout(rt); rt = setTimeout(()=>{ const c = cover; size(); cover = c; blades.forEach(b=>{ b.x = Math.random()*W; }); }, 150); });
 }
 
+
+
 /* ---------- carregar ---------- */
 (async function(){
   const m = location.hash.match(/[#&]p=([\w-]+)/);
   if (!m){ render(EXEMPLO, true); return; }
   try {
     const data = await decode(m[1]);
-    render(merge(EXEMPLO, data), false);
+    render(merge({...EXEMPLO, cliente:{}, obra:{}, num:'', diagnostico:'', obs:''}, data), false);
   } catch(e){
     $('#app').innerHTML = '<div class="err"><h1>Não conseguimos abrir esta proposta</h1><p>O link parece incompleto. Peça à Solo Verde Ambiental um novo link pelo WhatsApp (31) 9 7500-5106.</p></div>';
   }
