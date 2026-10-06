@@ -345,7 +345,7 @@ function render(P, demo){
       </div>
       <div class="cover-body">
         <div class="eyebrow ld" style="--i:1"><span class="dot"></span>Proposta ${esc(P.num)} · Hidrossemeadura</div>
-        <h1 class="ld" style="--i:2">${esc(P.obra.nome)}<br><em>de solo exposto a área verde.</em></h1>
+        <h1 class="ld" style="--i:2">${esc(P.obra.nome)}</h1>
         <p class="for ld" style="--i:3">Preparada para ${para}.${P.obra.municipio ? ' '+esc(P.obra.municipio)+'.' : ''}</p>
         <div class="valid ld" style="--i:4">Proposta válida até <b class="num">${esc(validade)}</b></div>
         <div class="ctas ld no-print" style="--i:5">
@@ -359,7 +359,7 @@ function render(P, demo){
   <div class="bar">
     <div class="wrap">
       <div class="id"><svg viewBox="195 195 910 910" aria-hidden="true"><use href="#sv-icon"/></svg><span><span class="lbl">Proposta </span><b>${esc(P.num)}</b> · ${esc(cliente)}</span></div>
-      <nav aria-label="Seções da proposta"><a href="#area">A área</a><a href="#solucao">Como fazemos</a><a href="#investimento">Investimento</a><a href="#condicoes">Condições</a></nav>
+      <nav aria-label="Seções da proposta"><a href="#area">Serviço</a><a href="#solucao">Como fazemos</a><a href="#investimento">Investimento</a><a href="#condicoes">Condições</a></nav>
       <a class="btn btn-dark" href="#aceite">Aprovar</a>
     </div>
   </div>
@@ -367,7 +367,7 @@ function render(P, demo){
   <main>
     <section id="area">
       <div class="wrap">
-        <div class="sh rv"><div class="n">${N()}</div><div><h2>O que encontramos na área</h2></div></div>
+        <div class="sh rv"><div class="n">${N()}</div><div><h2>Serviço a ser realizado</h2></div></div>
         <div class="body-col">
           <div class="kpis rv">
             <div class="kpi"><div class="v" data-count="${area}">${n0(area)}<small>m²</small></div><div class="l">Área a ser plantada</div></div>
