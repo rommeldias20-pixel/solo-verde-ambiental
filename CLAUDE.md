@@ -14,6 +14,11 @@ Site institucional da Solo Verde Ambiental (hidrossemeadura, revegetação e con
 - `proposta.html` — versão antiga da proposta comercial; a versão em uso fica no app (`../solo-verde-app`).
 - Fora do git (ver `.gitignore`): `video hero.MP4` (original de 79 MB), `antes.jpeg`, `durante.jpeg`, `IAPU-MG/`, `IGARAPÉ-MG/` (fotos brutas).
 
+## Identidade visual
+- Fonte oficial da marca: canvas "Solo Verde Ambiental — Identidade Visual" — https://claude.ai/artifact/PiVLFUfzHijbHxA6oHCUs2 (paleta, tipografia, logotipo, ícones, padrões, papelaria, social, website).
+- Antes de criar ou mudar qualquer peça visual, ler o canvas e seguir as cores, fontes e logos dele. Não inventar cores nem fontes.
+- O canvas está sendo atualizado pelo usuário; o que já está no ar não deve ser alterado para segui-lo sem pedido explícito.
+
 ## Regras
 - Preços e dados de clientes nunca vão para o repositório.
 - Domínio e e-mail ficam na Hostinger: nunca alterar registros MX, SPF, DMARC ou DKIM.
