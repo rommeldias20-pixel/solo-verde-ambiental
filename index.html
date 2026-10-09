@@ -459,7 +459,8 @@ footer{background:var(--mata);color:var(--orvalho);padding-block:56px calc(40px 
         <label>Área estimada (m²)<input id="f-area" name="area" inputmode="numeric" placeholder="Ex.: 12.000"></label>
         <label class="full">Cidade da obra<input id="f-cidade" name="cidade" placeholder="Ex.: Nova Lima — MG"></label>
         <label class="full">Conte sobre a área<textarea id="f-msg" name="msg" placeholder="Inclinação, tipo de solo, prazo, acesso..."></textarea></label>
-        <div class="form-actions"><span class="hint">Ao continuar, montamos a mensagem com estes dados para você enviar pelo WhatsApp.</span><button class="btn btn-primary" type="submit">Pedir orçamento <svg><use href="#i-arrow"/></svg></button></div>
+        <input type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <div class="form-actions"><span class="hint">Enviamos seu pedido para nossa equipe por e-mail e respondemos em breve.</span><button class="btn btn-primary" type="submit" id="f-send">Pedir orçamento <svg><use href="#i-arrow"/></svg></button></div>
         <div class="ready" id="ready" hidden><span id="readyTxt">Mensagem pronta.</span><a class="btn btn-lime" id="readyLink" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enviar pelo WhatsApp</a></div>
       </form>
     </div>
@@ -813,9 +814,22 @@ footer{background:var(--mata);color:var(--orvalho);padding-block:56px calc(40px 
     const v = id => document.getElementById(id).value.trim();
     const msg = ['Olá, Solo Verde! Gostaria de um orçamento.', 'Nome: '+v('f-nome'), v('f-empresa')&&('Empresa: '+v('f-empresa')), 'Telefone: '+v('f-tel'), v('f-email')&&('E-mail: '+v('f-email')),
       'Obra: '+v('f-tipo'), v('f-area')&&('Área estimada: '+v('f-area')+' m²'), v('f-cidade')&&('Cidade: '+v('f-cidade')), v('f-msg')&&('Detalhes: '+v('f-msg'))].filter(Boolean).join('\n');
-    document.getElementById('readyLink').href = waBase + '?text=' + encodeURIComponent(msg);
-    document.getElementById('readyTxt').textContent = 'Mensagem pronta, ' + v('f-nome').split(' ')[0] + '. Toque para enviar pelo WhatsApp.';
-    document.getElementById('ready').hidden = false;
+    const waLink = waBase + '?text=' + encodeURIComponent(msg);
+    const ready = document.getElementById('ready'), readyTxt = document.getElementById('readyTxt'), readyLink = document.getElementById('readyLink');
+    const btn = document.getElementById('f-send'), btnHtml = btn.innerHTML;
+    btn.disabled = true; btn.textContent = 'Enviando…'; ready.hidden = true;
+    const primeiro = v('f-nome').split(' ')[0];
+    fetch('enviar.php', {method:'POST', body:new FormData(form)})
+      .then(r => r.json().then(j => { if (!r.ok || !j.ok) throw new Error(j.erro || r.status); }))
+      .then(() => {
+        readyTxt.textContent = 'Pedido enviado, ' + primeiro + '! Respondemos em breve. Se preferir, fale agora pelo WhatsApp.';
+        readyLink.href = waLink; ready.hidden = false; form.reset();
+      })
+      .catch(() => {
+        readyTxt.textContent = 'Não conseguimos enviar por e-mail agora, ' + primeiro + '. Toque para enviar o pedido pelo WhatsApp.';
+        readyLink.href = waLink; ready.hidden = false;
+      })
+      .finally(() => { btn.disabled = false; btn.innerHTML = btnHtml; });
   });
 })();
 </script>
